@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>[##_title_##]</title>
+	<script type="text/javascript">
+
+if ( window.location.pathname == '/' ) 
+
+{location.href = 'https://hbyun.tistory.com/pages/Intro';}
+
+</script>
+
+</head>
+<body>
+    <s_t3>
+        <div class="header">
+            <img src="./images/logo.png">
+        </div>
+        <div class="container">
+            <div class="container__menu">
+                <div class="container__menu__bloginfo">
+                    <div class="container__menu__blogimage">[##_blog_image_##] </div>
+                    <span class="container__menu__userid">[##_blogger_##]</span>
+                    <div class="container__menu__blogdesc">[##_desc_##]</div>
+                    <hr>
+                    <div class="container__menu__menus">
+                        <s_sidebar>
+                            <s_sidebar_element>
+                                <div class="category">
+                                    <h3>📋Category</h3>
+                                    [##_category_list_##]
+                                </div>
+                            </s_sidebar_element>
+
+                            <s_sidebar_element>
+                                <!-- 이 블로그 인기글 -->
+                                <div class="popularPost">
+                                  <h3>🔥Hot !  </h3>
+                                  <ul class="hot_ul">
+                                    <s_rctps_popular_rep>
+                                      <li>
+                                        <s_rctps_rep_thumbnail>
+                                            <img src="[##_rctps_rep_thumbnail_##]"/>
+                                        </s_rctps_rep_thumbnail>
+                                        <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                        <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                                      </li>
+                                    </s_rctps_popular_rep>
+                                  </ul>
+                                </div>
+                            </s_sidebar_element>
+                            <hr>
+                            <s_sidebar_element>
+                                <!-- 카운터 -->
+                                <div class="counter">
+                                    <span class="total">Total : [##_count_total_##] </span>
+                                    <span class="today">Today : [##_count_today_##]</span>
+                                    <span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
+                                </div>
+                            </s_sidebar_element>
+
+                            <s_sidebar_element>
+                                <!-- 검색 -->
+                                <div class="search">
+                                  <s_search>
+                                    <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
+                                    <input value="검색" type="button" onclick="[##_search_onclick_submit_##]" class="submit" />
+                                  </s_search>
+                                </div>
+                            </s_sidebar_element>
+                        </s_sidebar>
+                        
+                        <a href="https://solved.ac/hseoks/"><img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=hseoks" width="170px"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container__content">
+                <s_article_rep>
+                    <div class="container__content__article">
+                        <span class="container__content__title">[##_article_rep_title_##]</span><br>
+                        <hr>
+                        <span class="container__content__date">[##_article_rep_date_##]</span><br>
+                        <hr>
+                        <span class="container__content__desc">[##_article_rep_desc_##]</span>
+                    </div>
+
+                </s_article_rep>
+                
+                <s_paging>
+                    <div class="paging">
+                      <a [##_prev_page_##] class="[##_no_more_prev_##]">◀ 이전 </a>
+                      <span class="numbox">
+                        <s_paging_rep>
+                          <a [##_paging_rep_link_##] class="num">&nbsp;[##_paging_rep_link_num_##]&nbsp;</a>
+                        </s_paging_rep>
+                      </span>
+                      <a [##_next_page_##] class="[##_no_more_next_##]">다음 ▶</a>
+                    </div>
+                </s_paging>
+            </div>
+        </div>
+        <script src="./images/index.js"></script>
+    </s_t3>
+    
+</body>
+</html>
