@@ -117,7 +117,7 @@ hr {
 .container__content__title{
     font-size: 2em;
     font-weight: bold;
-		text-align: center;
+	text-align: center;
 }
 .counter{
     display: flex;
@@ -232,4 +232,99 @@ hr {
     text-align: center;
 }
 
+
+.comment{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.commentList ul{
+    margin-left: 10px;
+    
+}
+
+.commentList{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.comment>h3{
+    margin: 5px;
+    font-size: 24px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+
+.control a{
+    text-align: left;
+    font-size: 10px;
+    opacity: 0.5;
+}
+.rp_general p{
+    text-indent: 15px;
+    margin: 10px auto;    
+}
+
+.rp_admin p{
+    margin: 10px auto;
+    text-indent: 15px;
+    font-weight: bold;
+}
+
+.rp_admin>.name{
+    color: blue;
+}
+
+.date{
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.date a{
+    font-size: 10px;
+    opacity: 0.5;
+}
+.commentList>ol>li{
+    margin-bottom: 40px;
+}
+
+.submitbtn{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 8px;
+    height: 30px;
+}
+.commentdesc{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: scroll;
+    transition: all 0.3s ease-in-out;
+}
+
+.commentdesc:focus, .commentdesc:hover{
+    outline: 1px solid rgba(216, 216, 216, 0.1);
+    transition: all 0.3s ease-in-out;
+    height: 100px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.commentdesc::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .commentdesc {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 

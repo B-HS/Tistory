@@ -19,5 +19,4 @@ function init(){
 }
 
 init()
-window.addEventListener("resize", hideNavBar)
-
+window.addEventListener("resize", hideNavBar)\
