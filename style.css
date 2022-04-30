@@ -328,3 +328,6 @@ hr {
     scrollbar-width: none;  /* Firefox */
   }
 
+.contents_style{
+    line-height: 27px;
+}
