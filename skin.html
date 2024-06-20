@@ -1,187 +1,547 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>[##_title_##]</title>
+<html lang="ko">
+  <head>
+    <title>[##_page_title_##] :: [##_title_##]</title>
 
-    <!-- auto direct to page -->
-	<script type="text/javascript">
-        if ( window.location.pathname == '/' ) {
-            location.href = 'https://hbyun.tistory.com/pages/Intro';
-        }
-    </script>
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="title" content="[##_page_title_##] :: [##_title_##]" />
+    <meta name="description" content="[##_desc_##]" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="twitter:domain" content="[##_page_title_##]" />
 
-</head>
-<body>
-    <s_t3>
-        <div class="header">
-            <a href="[##_blog_link_##]"><img src="./images/logo.png"></a>
-        </div>
-        <div class="container">
-            <div class="container__menu">
-                <div class="container__menu__bloginfo">
-                    <div class="container__menu__blogimage">[##_blog_image_##] </div>
-                    <span class="container__menu__userid">[##_blogger_##]</span>
-                    <div class="container__menu__blogdesc">[##_desc_##]</div>
-                    <hr>
-                    <div class="container__menu__menus">
-                        <s_sidebar>
-                            <s_sidebar_element>
-                                <div class="category">
-                                    <h3>📋Category</h3>
-                                    [##_category_list_##]
-                                </div>
-                            </s_sidebar_element>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="[##_title_##]"
+      href="[##_rss_url_##]"
+    />
 
-                            <s_sidebar_element>
-                                <!-- 이 블로그 인기글 -->
-                                <div class="popularPost">
-                                  <h3>🔥Hot !  </h3>
-                                  <ul class="hot_ul">
-                                    <s_rctps_popular_rep>
-                                      <li>
-                                        <s_rctps_rep_thumbnail>
-                                            <img src="[##_rctps_rep_thumbnail_##]"/>
-                                        </s_rctps_rep_thumbnail>
-                                        <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
-                                        <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
-                                      </li>
-                                    </s_rctps_popular_rep>
-                                  </ul>
-                                </div>
-                            </s_sidebar_element>
-                            <hr>
-                            <s_sidebar_element>
-                                <!-- 카운터 -->
-                                <div class="counter">
-                                    <span class="total">Total : [##_count_total_##] </span>
-                                    <span class="today">Today : [##_count_today_##]</span>
-                                    <span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
-                                </div>
-                            </s_sidebar_element>
+    <!-- LUCIDE ICON -->
+    <script src="./images/lucide.js"></script>
+    
+    <!-- REMOVE LIGHTBOX ERROR -->
+    <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
 
-                            <s_sidebar_element>
-                                <!-- 검색 -->
-                                <div class="search">
-                                  <s_search>
-                                    <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
-                                    <input value="검색" type="button" onclick="[##_search_onclick_submit_##]" class="submit" />
-                                  </s_search>
-                                </div>
-                            </s_sidebar_element>
-                        </s_sidebar>
-                        
-                        <a href="https://solved.ac/hseoks/"><img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=hseoks" width="170px"></a>
-                    </div>
+    <!-- IMPORT HIGHLIGHTJS -->
+    <script src="./images/highlight.min.js"></script>
 
+    <!-- IMPORT HIGHLIGHTJS LANGS -->
+    <script src="./images/bash.min.js"></script>
+    <script src="./images/cpp.min.js"></script>
+    <script src="./images/csharp.min.js"></script>
+    <script src="./images/css.min.js"></script>
+    <script src="./images/go.min.js"></script>
+    <script src="./images/java.min.js"></script>
+    <script src="./images/javascript.min.js"></script>
+    <script src="./images/kotlin.min.js"></script>
+    <script src="./images/php.min.js"></script>
+    <script src="./images/delphi.min.js"></script>
+    <script src="./images/python.min.js"></script>
+    <script src="./images/r.min.js"></script>
+    <script src="./images/ruby.min.js"></script>
+    <script src="./images/scala.min.js"></script>
+    <script src="./images/shell.min.js"></script>
+    <script src="./images/scss.min.js"></script>
+    <script src="./images/sql.min.js"></script>
+    <script src="./images/swift.min.js"></script>
+    <script src="./images/typescript.min.js"></script>
+    <script src="./images/vbnet.min.js"></script>
+    <script src="./images/xml.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./images/github.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body id="[##_body_id_##]" class="overflow-hidden h-dvh">
+    <!-- ESSENTIAL TAG -->
+    <s_t3 class="relative flex flex-col w-full h-full pt-16">
+      <!-- SITE HEADER -->
+      <header class="fixed top-0 z-50 w-full border-b backdrop-blur">
+        <section class="flex items-center justify-start h-16 px-3">
+          <a
+            href="[##_blog_link_##]"
+            class="flex items-center gap-2 text-xl font-bold"
+          >
+            [##_title_##]
+          </a>
+          <div class="flex flex-col justify-center">
+            <button id="theme-toggle" type="button" class="text-neutral-500 dark:text-neutral-400 focus:outline-none text-sm p-2.5">
+              <i id="theme-toggle-dark-icon" class="hidden w-5 h-5" data-lucide="moon"></i>
+              <i id="theme-toggle-light-icon" class="hidden w-5 h-5" data-lucide="sun"></i>
+            </button>
+          </div>
+        </section>
+      </header>
+
+      <section class="flex h-full">
+        <!-- SIDE BAR -->
+        <section
+          id="sidebar"
+          class="absolute top-0 left-0 flex flex-col h-full gap-6 pt-16 overflow-y-scroll border-r w-72"
+        >
+          <!-- SIDE BAR USER INFO -->
+          <section class="flex items-center justify-center w-full mt-6">
+            <div
+              class="flex flex-col items-center justify-center gap-3 p-3 text-center w-52"
+            >
+              <img class="rounded-full" src="[##_image_##]" alt="blog_img" />
+              <span class="text-neutral-500">[##_desc_##]</span>
+            </div>
+          </section>
+
+          <hr />
+
+          <s_sidebar>
+            <s_sidebar_element>
+              <!-- SIDE BAR MENU -->
+              <section>
+                <!-- SIDE BAR MENU HEADER -->
+                <section class="flex items-center p-2 px-5 category">
+                  <i data-lucide="menu" class="p-0.5"></i>
+                  <span class="text-lg font-bold"> Category </span>
+                </section>
+
+                <!-- SIDE BAR MENU LIST -->
+                <section class="px-5">[##_category_list_##]</section>
+              </section>
+
+              <!-- SIDE BAR RECENT ARTICLES -->
+              <section>
+                <section class="flex items-center p-2 px-5 category">
+                  <i data-lucide="layers" class="p-0.5"></i>
+                  <span class="text-lg font-bold"> Recent Articles </span>
+                </section>
+                <section class="px-5">
+                  <ul class="flex flex-col gap-2">
+                    <s_rctps_rep>
+                      <li class="flex gap-2">
+                        <s_rctps_rep_thumbnail>
+                          <img class="rounded size-6" src="[##_rctps_rep_thumbnail_##]"/>
+                        </s_rctps_rep_thumbnail> 
+                        <span class="truncate">
+                          <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                          <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                        <span>
+                      </li>
+                    </s_rctps_rep>
+                  </ul>
+                </section>
+              </section>
+
+              <!-- SIDE BAR POPULAR ARTICLES -->
+              <section>
+                <section class="flex items-center p-2 px-5 category">
+                  <i data-lucide="flame" class="p-0.5"></i>
+                  <span class="text-lg font-bold"> Popular Articles </span>
+                </section>
+                <section class="px-5">
+                  <ul class="flex flex-col gap-2">
+                    <s_rctps_popular_rep>
+                      <li class="flex gap-2">
+                        <s_rctps_rep_thumbnail>
+                          <img class="rounded size-6" src="[##_rctps_rep_thumbnail_##]"/>
+                        </s_rctps_rep_thumbnail> 
+                        <span class="truncate">
+                          <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                          <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                        <span>
+                      </li>
+                    </s_rctps_popular_rep>
+                  </ul>
+                </section>
+              </section>
+
+              <!-- SIDE BAR RECENT REPLIES --> 
+              <section>
+                <section class="flex items-center p-2 px-5 category">
+                  <i data-lucide="message-circle" class="p-0.5"></i>
+                  <span class="text-lg font-bold"> Recent Replies </span>
+                </section>
+                <section class="px-5">
+                  <ul class="flex flex-col gap-2">
+                    <s_rctrp_rep>
+                      <li class="flex gap-2">
+                        <span class="truncate">
+                          <a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##].</a>
+                          <span class="name">[##_rctrp_rep_name_##]</span>
+                          <span class="date">[##_rctrp_rep_time_##]</span>
+                        <span>
+                      </li>
+                    </s_rctrp_rep>
+                  </ul>
+                </section>
+              </section>
+
+              <!-- SIDE BAR VISITOR -->
+              <section class="pb-6">
+                <section class="flex items-center p-2 px-5 category">
+                  <i data-lucide="message-circle" class="p-0.5"></i>
+                  <span class="text-lg font-bold"> Visitor </span>
+                </section>
+                <section class="flex flex-col gap-2 px-5 ml-3">
+                  <span>Today : [##_count_today_##]</span>
+                  <span>Yesterday : [##_count_yesterday_##]</span>
+                  <span>Total : [##_count_total_##] </span>
+                </section>
+              </section>
+            </s_sidebar_element>
+          </s_sidebar>
+        </section>
+
+        <!-- CONTENT AREA -->
+        <section id="content" class="w-full overflow-y-scroll ml-72 mr-3">
+          <!-- CONTENT ARTICLE -->
+          <s_article_rep>
+            <!-- ARTICLE LIST CARD -->
+            <s_index_article_rep>
+              <section class="flex flex-1 gap-2 m-3 mr-0 border shadow-sm h-52 hover:shadow-md">
+                <!-- ARTICLE LIST CARD THUMBNAIL -->
+                <a href="[##_article_rep_link_##]" class="w-1/3 cursor-pointer aspect-square max-w-[530px] border-r">
+                  <s_article_rep_thumbnail>
+                    <img class="object-cover w-full h-full bg-neutral-300" src="[##_article_rep_thumbnail_url_##]" alt="thumbnail" />
+                  </s_article_rep_thumbnail>
+                </a>
+                <!-- ARTICLE LIST CARD CONTENT -->
+                <div class="flex flex-col w-full gap-2 px-3 py-2">
+                  <a class="text-2xl font-extrabold" href="[##_article_rep_link_##]">
+                    [##_article_rep_title_##]
+                  </a>
+                  <div class="flex items-center gap-3 text-neutral-500">
+                    <span class="flex gap-1">
+                      <i data-lucide="calendar" class="p-1 pl-0"></i>
+                      <span>[##_article_rep_date_##]</span>
+                    </span>
+                    <a href="[##_article_rep_category_link_##]" class="flex gap-1 text-neutral-500">
+                      <i data-lucide="menu" class="p-1 pl-0"></i>
+                      <span>[##_article_rep_category_##]</span>
+                    </a>
+                  </div>
+                  <span class="text-neutral-500 overflow-hidden">[##_article_rep_summary_##]</span>
                 </div>
-            </div>
+                <div class="button-group">
+                  <button
+                    class="article-view-button"
+                    onclick="move('[##_article_rep_link_##]')"
+                  >
+                    <i class="uil uil-eye"></i>
+                  </button>
+                  <button
+                    class="article-clipboard-button"
+                    onclick="copyArticleUrl('[##_article_rep_link_##]')"
+                  >
+                    <i class="uil uil-copy"></i>
+                  </button>
+                </div>
+              </section>
+            </s_index_article_rep>
 
-            <div class="container__content">
-                <s_article_rep>
-                    <div class="container__content__article">
-                        <span class="container__content__title">[##_article_rep_title_##]</span><br>
-                        <hr>
-                        <span class="container__content__date">[##_article_rep_date_##]</span><br>
-                        <hr>
-                        <span class="container__content__desc">[##_article_rep_desc_##]</span>
-                        <s_rp>
-                            <div class="comment">
-                              <h3>Comment</h3>
-                              <div class="commentList">
-                                <s_rp_container>
-                                  <ol>
-                                    <s_rp_rep>
-                                      <li id='[##_rp_rep_id_##]'>
-                                        <div class="[##_rp_rep_class_##]">
-                                          <span class="name">[##_rp_rep_name_##]</span>
-                                          <span class="date"> [##_rp_rep_date_##]</span>
-                                          <span class="control">
-                                            <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">
-                                              <span>수정/삭제</span>
-                                            </a>
-                                            <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">
-                                              <span>댓글쓰기</span>
-                                            </a>
-                                          </span>
-                                          <p>[##_rp_rep_desc_##]</p>
-                                        </div>
-                                        <s_rp2_container>
-                                          <ul>
-                                            <s_rp2_rep>
-                                              <li id='[##_rp_rep_id_##]'>
-                                                <div class="[##_rp_rep_class_##]">
-                                                   
-                                                    └&nbsp;<span class="name">[##_rp_rep_name_##]</span>
-                                                    &nbsp;&nbsp;<span class="date"> [##_rp_rep_date_##]</span>
-                                                  <span class="control">
-    
-                                                    <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">
-                                                      <span>수정/삭제</span>
-                                                    </a>
-                                                  </span>
-                                                  <p>&nbsp;&nbsp;[##_rp_rep_desc_##]</p>
-                                                </div>
-                                              </li>
-                                            </s_rp2_rep>
-                                          </ul>
-                                        </s_rp2_container>
-                                      </li>
-                                    </s_rp_rep>
-                                  </ol>
-                                </s_rp_container>
-                              </div>
-                              <s_rp_input_form>
-                                <div class="commentWrite">
-                                  <s_rp_member>
-                                    <s_rp_guest>
-                                        <label for="name"> : 이름 </label><input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
-                                        <label for="password"> : 패스워드 </label><input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />
-                                    </s_rp_guest>
-                                    <p class="secretWrap">
-                                      <input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" />
-                                      <label for="secret"> 비밀글 </label>
-                                    </p>
-                                  </s_rp_member>
-                                  <p>
-                                    <textarea class = "commentdesc" placeholder="comment.." name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea>
-                                  </p>
-                                  <br>
-                                  <p>
-                                    <input type="submit" value="등록" onclick="[##_rp_onclick_submit_##]" class="submitbtn"/>
-                                  </p>
-                                </div>
-                              </s_rp_input_form>
+            <!-- ARTICLE DETAIL -->
+            <s_permalink_article_rep>
+              <section id="article_detail" class="relative flex flex-col max-w-screen-xl gap-2 pb-5 min-h-dvh  border-r">
+                <!-- ARTICLE DETAIL TITLE SECTION -->
+                <section class="backdrop-blur-md bg-background/75 sticky top-0 left-0 z-[1000] flex items-center justify-between border border-l-0 border-r-0 px-2 py-2 flex-wrap">
+                  <section class="flex items-center justify-between flex-wrap">
+                    <a href="[##_article_rep_category_link_##]" class="text-neutral-500">[##_article_rep_category_##]</a>
+                    <i class="text-neutral-300" data-lucide="dot"></i>
+                    <span class="text-2xl font-bold">[##_article_rep_title_##]</span>
+                  </section>
+                  <section class="flex items-center justify-between">
+                    <span>[##_article_rep_date_##]</span>
+                    <s_ad_div>
+                      <i data-lucide="dot"></i>
+                      <div class="flex gap-1">
+                        <a href="[##_s_ad_m_link_##]">
+                          <i class="p-1" data-lucide="pencil"></i>
+                        </a>
+                        <a href="#" onclick="[##_s_ad_t_onclick_##]">
+                          <i class="p-1" data-lucide="link"></i>
+                        </a>
+                        <a href="#" onclick="[##_s_ad_d_onclick_##]">
+                          <i class="p-1" data-lucide="x"></i>
+                        </a>
+                        <a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a>
+                      </div>
+                    </s_ad_div>
+                  </section>
+                </section>
+
+
+                <!-- ARTICLE DETAIL TAG SECTION -->
+                <s_tag_label>
+                  <section id="article_tags" class="flex flex-wrap items-center gap-1 text-sm">
+                     <i class="p-1 rotate-90" data-lucide="tag"></i>
+                     [##_tag_label_rep_##]
+                  </section>
+                </s_tag_label>
+
+                <hr id="tag_horizontal" />
+
+                <!-- ARTICLE DETAIL DESCRIPTION SECTION -->
+                <section id="article" class="px-5 py-1">
+                  [##_article_rep_desc_##]
+                </section>
+
+                <hr />
+
+                <!-- ARTICLE DETAIL RELATED ARTICLE SECTION -->
+                <s_article_related>
+                  <section class="flex gap-2 px-2">
+                    <i data-lucide="layers"></i>
+                    <a href="[##_article_rep_category_link_##]" class="link_more">[##_article_rep_category_##]의 다른 글</a>
+                  </section>
+                  <ul class="my-0">
+                      <s_article_related_rep>
+                        <li class="[##_article_related_rep_type_##] px-2 mr-2">
+                          <a href="[##_article_related_rep_link_##]" class="flex items-center justify-between gap-2 link_related">
+                            <div class="flex items-center gap-2">
+                              <span class="txt_related">- [##_article_related_rep_title_##]</span>
                             </div>
-                        </s_rp>
-                    </div>
-                </s_article_rep>
-                
+                            <span class="date_related">[##_article_related_rep_date_##]</span>
+                          </a>
+                        </li>
+                      </s_article_related_rep>
+                  </ul>
+                </s_article_related>
 
+                <hr />
 
-                
+                <!-- ARTICLE DETAIL REPLY SECTION -->
+                <s_rp>
+                  <section>
+                    <hr />
+                    <!-- ARTICLE DETAIL REPLY SECTION HEADER -->
+                    <section class="flex items-center gap-2 px-3 mt-5 mb-2 text-2xl font-bold">
+                      <i data-lucide="message-circle"></i>
+                      <span> Comments </span>
+                    </section>
 
+                    
+                    <!-- ARTICLE DETAIL REPLY SECTION LIST -->
+                    <section>
+                      [##_comment_group_##]
+                    </section>
+                  </section>
+                  
+                </s_rp>
+                <div id="toc"/>
+              </section>
+            </s_permalink_article_rep>
+          </s_article_rep>
+          <!-- ETC AREA, DISABLED TEMPORARY -->
+          <!-- <section id="etc" class="absolute right-0 transition-none h-dvh top-16 bg-neutral-300">HELLO</section> -->
+          <!-- COMMON PAGING -->
+          <s_paging>
+            <section class="flex justify-center w-full gap-1">
+              <a [##_prev_page_##] class="[##_no_more_prev_##] text-neutral-500 hover:text-neutral-900 p-2 border">
+                <i data-lucide="chevron-left"></i>
+              </a>
+              <s_paging_rep>
+                <a class="text-neutral-500 p-2 border size-[42px] aspect-square text-center" [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a>
+              </s_paging_rep>
+              <a [##_next_page_##] class="[##_no_more_next_##] text-neutral-500 hover:text-neutral-900 p-2 border">
+                <i data-lucide="chevron-right"></i>
+              </a>
+            </section>
+          </s_paging>
+          
+        <s_tag>
+          <section class="p-3">
+            <h3>태그 목록</h3>
+            <ul class="flex flex-wrap gap-3">
+              <s_tag_rep>
+              <li class="p-2 border cursor-pointer hover:bg-neutral-300 hover:text-neutral-700">
+                  <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+              </li>
+                </s_tag_rep>
+            </ul>
+          </div>
+        </s_tag>
 
+        <s_guest>
+          <div class="flex flex-col justify-start gap-3 p-3">
+            <h3>방명록은 지원하지 않습니다</h3>
+            <a
+              href="[##_blog_link_##]"
+              class="text-neutral-500 dark:text-neutral-400 border hover:bg-neutral-100 text-sm p-2.5 w-fit"
+            >
+              메인으로 이동
+            </a>
+          </div>
+        </s_guest>
 
-
-                <s_paging>
-                    <div class="paging">
-                      <a [##_prev_page_##] class="[##_no_more_prev_##]">◀ 이전 </a>
-                      <span class="numbox">
-                        <s_paging_rep>
-                          <a [##_paging_rep_link_##] class="num">&nbsp;[##_paging_rep_link_num_##]&nbsp;</a>
-                        </s_paging_rep>
-                      </span>
-                      <a [##_next_page_##] class="[##_no_more_next_##]">다음 ▶</a>
-                    </div>
-                </s_paging>
-            </div>
-        </div>
-        <script src="./images/index.js"></script>
     </s_t3>
-    
-</body>
+    <script>
+      const LANG_MAP = {
+        bash: "Bash",
+        cpp: "C++",
+        csharp: "C#",
+        css: "CSS",
+        go: "Go",
+        java: "Java",
+        javascript: "JavaScript",
+        kotlin: "Kotlin",
+        php: "PHP",
+        delphi: "Delphi",
+        python: "Python",
+        r: "R",
+        ruby: "Ruby",
+        scala: "Scala",
+        shell: "Shell",
+        scss: "SCSS",
+        sql: "SQL",
+        swift: "Swift",
+        typescript: "TypeScript",
+        vbnet: "VB.NET",
+        xml: "XML",
+      }
+      const calcEtcSectionWidthAndSetToc = () => {
+        const toc = document.getElementById("toc");
+        const sidebarWidth = document.getElementById("sidebar")?.clientWidth || 0;
+        const contentWidth = document.getElementById("article_detail")?.clientWidth || 0;
+        const windowWidth = window.innerWidth;
+        const etcWidth = Number(windowWidth) - (Number(sidebarWidth) + Number(contentWidth));
+        if(toc) toc.style.right = etcWidth-300 + "px"; 
+      }
+
+      const onClickEvt = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const contentSection = document.getElementById('content');
+          const contentRect = contentSection.getBoundingClientRect();
+          const targetRect = targetElement.getBoundingClientRect();
+          const offsetTop = targetRect.top - contentRect.top + contentSection.scrollTop - 50;
+
+          contentSection.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+          
+        }
+      }
+
+      const isDarkMode = localStorage.getItem("color-theme") === "dark" || (!localStorage.getItem("color-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList?.remove('dark', 'light')
+      document.documentElement.classList.add(isDarkMode?'dark':'light')
+
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.innerWidth < 720) {
+          if(window.confirm("브라우저의 폭이 작습니다. \r\n 모바일 페이지로 이동하시겠습니까?")){
+            window.location.href = "[##_blog_link_##]" + "m/"+window.location.href.split("[##_blog_link_##]")[1]
+          }
+            
+        }
+
+
+        lucide.createIcons();
+        const isDarkMode = localStorage.getItem("color-theme") === "dark" || (!localStorage.getItem("color-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+        const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+        const codeBlocks = document.ge
+        themeToggleLightIcon.classList.toggle("hidden", !isDarkMode);
+        themeToggleDarkIcon.classList.toggle("hidden", isDarkMode);
+        themeToggleBtn.addEventListener("click", () => {
+          themeToggleDarkIcon.classList.toggle("hidden");
+          themeToggleLightIcon.classList.toggle("hidden");
+
+          const isLightMode = localStorage.getItem("color-theme") === "light" || 
+                              (!localStorage.getItem("color-theme") && !document.documentElement.classList.contains("dark"));
+
+          document.documentElement.classList.toggle("dark", isLightMode);
+          localStorage.setItem("color-theme", isLightMode ? "dark" : "light");
+        }); 
+
+        document.querySelectorAll('.another_category').forEach((element) => element.remove())
+        const btns = document.querySelectorAll('.btn_post')
+        try{
+          if(btns.length>0){
+            btns[0].style['padding-left'] = 0
+            btns[3].style['padding-right'] = 0
+          }
+          
+        }catch(error){
+          console.log("[BSKIN] ICON LOAD FAILED")
+        }
+
+        const originalTagElementInnerHtml = document.getElementById("article_tags")?.innerHTML || '';
+        const tagLength = originalTagElementInnerHtml?.split(",")?.filter(ele=>!!ele)?.length || 0
+        const commaRemovedTagsList = originalTagElementInnerHtml.split(",").join(" ");
+        
+        tagLength === 0 && document.getElementById("tag_horizontal")?.remove()
+        if(document.getElementById("article_tags")){
+          document.getElementById("article_tags").innerHTML = commaRemovedTagsList
+        }
+        
+       
+
+        let toc = "";
+        let level = 0;
+        const headers = document.querySelectorAll(".contents_style h2, .contents_style h3, .contents_style h4, .contents_style h5, .contents_style h6");
+        headers.forEach((element) => {
+          const openLevel = parseInt(element.tagName.charAt(1));
+          const anchor = element.textContent.trim().toLowerCase().replace(/[^\w\u4E00-\u9FFF\u3400-\u4DBF\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7AF]+/g, '_');
+          element.id = anchor;
+          if (openLevel > level) {
+            toc += "<ul>".repeat(openLevel - level);
+      
+          } else if (openLevel < level) {
+            toc += "</ul>".repeat(level - openLevel);
+      
+          }
+
+          level = openLevel;
+          toc += `<li><a href="#${anchor}" class="toc-link">${element.textContent}</a></li>`;
+        });
+
+        if (level) {
+          toc += "</ul>".repeat(level);
+        }
+        if(document.getElementById("toc")){
+          document.getElementById("toc").innerHTML += toc.slice(4, -5);
+        }
+        
+
+        document.querySelectorAll('.toc-link').forEach((link) => {
+          link.addEventListener('click', onClickEvt);
+        });
+
+        calcEtcSectionWidthAndSetToc();
+
+        window.addEventListener('resize', () => {
+          calcEtcSectionWidthAndSetToc();
+        });
+
+        setTimeout(()=>{
+            document.querySelectorAll("code").forEach(codeblock => {
+            const LANG = LANG_MAP[codeblock.classList[1]?.split('-')[1].toLowerCase()] || 'CUSTOM'
+            codeblock.innerHTML = `
+              <section class="flex flex-col gap-2">
+                <section class="flex justify-between border-b-2 py-1 items-center">
+                  <span class="p-2">${LANG}</span>
+                  <button id="copy" class="border p-2 py-1 hover:bg-neutral-300 cursor-pointer">COPY</button>
+                </section> 
+                <section id="codecontext">${codeblock.innerHTML}</section>
+              </section>
+            `.trim()
+            codeblock.querySelector('#copy').addEventListener('click', () => {
+              navigator.clipboard.writeText(codeblock.querySelector('#codecontext').innerText)
+            })
+          })
+        })
+      });
+    </script>
+  </body>
 </html>

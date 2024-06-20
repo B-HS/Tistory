@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
   <information>
-    <name>기본 스킨</name>
-    <version>1.1</version>
+    <name>BSKIN</name>
+    <version>1.0</version>
     <description>
-      <![CDATA[연습용 티스토리 스킨입니다. 많이미흡합니다]]>
+      <![CDATA[최대한 심플한 느낌의 디자인으로 설계하였습니다]]>
     </description>
     <license>
-      <![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
+      <![CDATA[수정 불가, 저작권 표시 필수]]>
     </license>
   </information>
   <author>
-    <name>Hyunseok</name>
-    <homepage>https://github.com/B-HS</homepage>
-    <email>gumyoincirno@gmail.com</email>
+    <name>Hyunseok Byun</name>
+    <homepage>https://github.com/b-hs</homepage>
+    <email>hs@gumyo.net</email>
   </author>
   <default>
     <recentEntries>5</recentEntries>
